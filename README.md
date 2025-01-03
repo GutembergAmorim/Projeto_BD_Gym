@@ -10,10 +10,10 @@ Consultas realizadas:
 
 1 - Consultar todos os alunos com seus planos e pagamentos.
 
-SELECT a.nome AS aluno_nome, 
-       p.nome_aula AS periodicidade, 
-       pa.data_pagamento, 
-       pa.valor
+SELECT a.nome AS Nome_Aluno,
+	   p.nome_aula AS Periodicidade,
+	   pa.data_pagamento,
+	   pa.valor
 FROM alunos a
 JOIN pagamentos pa ON a.aluno_id = pa.aluno_id
 JOIN planos p ON pa.aluno_id = p.plano_id

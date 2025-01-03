@@ -26,8 +26,8 @@ CREATE TABLE Planos (
     nome_aula VARCHAR(50) NOT NULL,
     descricao TEXT,
     valor NUMERIC(10, 2) NOT NULL,
-    duracao_meses INT NOT NULL
-    ativo BOOLEAN,
+    duracao_meses INT NOT NULL,
+    ativo BOOLEAN
 );
 
 -- Tabela: Aulas
@@ -37,7 +37,7 @@ CREATE TABLE Aulas (
     descricao TEXT,
     horario TIME NOT NULL,
     data DATE NOT NULL,
-    treinador_id INT REFERENCES Treinador(treinador_id),
+    treinador_id INT REFERENCES Treinadores(treinador_id),
     capacidade INT NOT NULL,
     tipo_aula VARCHAR(100) NOT NULL
 );
@@ -48,7 +48,7 @@ CREATE TABLE Frequencia (
     aluno_id INT REFERENCES Alunos(aluno_id) ON DELETE CASCADE,
     aula_id INT REFERENCES Aulas(aula_id) ON DELETE CASCADE,
     data_frequencia DATE NOT NULL,
-    presente BOOLEAN,
+    presente BOOLEAN
 );
 
 -- Tabela: Pagamento
@@ -58,7 +58,7 @@ CREATE TABLE Pagamentos (
     plano_id INT REFERENCES Planos(plano_id) ON DELETE CASCADE,
     data_pagamento DATE NOT NULL,
     valor NUMERIC(10, 2) NOT NULL,
-    status_pagamento VARCHAR(20),
+    status_pagamento VARCHAR(20)
 );
 
 -- Tabela: Evolução Física
@@ -70,7 +70,7 @@ CREATE TABLE Evolucao_Fisica (
     cintura NUMERIC(5, 2),
     peito NUMERIC(5, 2),
     quadril NUMERIC(5, 2),
-    observacoes TEXT,
+    observacoes TEXT
 );
 
 -- Tabela: Histórico de Treinos
@@ -81,5 +81,5 @@ CREATE TABLE Historico_Treinos (
     tipo_treino VARCHAR(50) NOT NULL,
     descricao TEXT,
     duracao INT NOT NULL,
-    intensidade VARCHAR(20),
+    intensidade VARCHAR(20)
 );

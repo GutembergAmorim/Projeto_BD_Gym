@@ -22,7 +22,7 @@ VALUES
 
 -- Tabela Planos
 
-INSERT INTO Planos (nome_plano, descricao, valor, duracao_meses, ativo)
+INSERT INTO Planos (nome_aula, descricao, valor, duracao_meses, ativo)
 VALUES
     ('Plano Básico', 'Acesso limitado a horários fora de pico.', 120.00, 1, TRUE),
     ('Plano Padrão', 'Acesso completo com aulas em grupo.', 150.00, 3, TRUE),
@@ -66,18 +66,18 @@ VALUES
 
 -- Tabela Historico_treinos
 
-INSERT INTO Historico_Treinos (aluno_id, data_treino, tipo_treino, descricao)
+INSERT INTO Historico_Treinos (aluno_id, data_treino, tipo_treino, descricao, duracao, intensidade)
 VALUES
-    (1, '2025-01-01', 'Cardio', 'Treino de corrida leve na esteira.'),
-    (2, '2025-01-02', 'Fortalecimento', 'Treino de musculação para pernas e glúteos.'),
-    (3, '2025-01-03', 'Flexibilidade', 'Sessão de alongamentos e yoga.'),
-    (4, '2025-01-04', 'Resistência', 'Treino de circuito funcional.'),
-    (5, '2025-01-05', 'Dança', 'Aula de zumba para queima calórica.');
+    (1, '2025-01-01', 'Cardio', 'Treino de corrida leve na esteira.', 30, 'Alta'),
+    (2, '2025-01-02', 'Fortalecimento', 'Treino de musculação para pernas e glúteos.', 40, 'Media'),
+    (3, '2025-01-03', 'Flexibilidade', 'Sessão de alongamentos e yoga.', 30, 'baixa'),
+    (4, '2025-01-04', 'Resistência', 'Treino de circuito funcional.', 50, 'Alta'),
+    (5, '2025-01-05', 'Dança', 'Aula de zumba para queima calórica.', 30, 'Media');
 
 
 -- Tabela Pagamentos
 
-INSERT INTO Pagamentos (aluno_id, plano_id, data_pagamento, valor, status_pagamentos)
+INSERT INTO Pagamentos (aluno_id, plano_id, data_pagamento, valor, status_pagamento)
 VALUES
     (1, 1, '2025-01-01', 120.00, 'Pago'),
     (2, 2, '2025-01-02', 150.00, 'Atrasado'),
